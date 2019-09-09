@@ -14,14 +14,16 @@ def threeSum(nums):
             s = nums1[i] + nums1[j] + nums1[k]
             if s == 0:
                 res.append([nums1[i], nums1[j], nums1[k]])
+                j += 1
+                k -= 1
+                while j < k and nums1[j] == nums1[j-1]: j += 1
+                while j < k and nums1[k] == nums1[k+1]: k -= 1
             elif  s > 0:
                 k -= 1
                 while j < k and nums1[k] == nums1[k+1]: k -= 1
             else:
                 j += 1
-                while j < k and nums1[j] == nums1[j+1]: j += 1
-            j += 1
-            k -= 1
+                while j < k and nums1[j] == nums1[j-1]: j += 1
     return res
-nums = [-1, 0, 1, 2, -1, -4]
+nums = [1, -1, -1, 0]
 print(threeSum(nums))
