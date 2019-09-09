@@ -7,3 +7,8 @@ def threeSum(nums):
     nums1 = sorted(nums)
     i = len(nums1) // 2
     data = nums1[i]
+    return data
+aa = 1
+bb = 2
+
+print(aa)
