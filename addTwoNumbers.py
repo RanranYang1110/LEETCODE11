@@ -3,12 +3,25 @@
 # @file: addTwoNumbers.py
 # @time: 2019/09/06
 def threeSum(nums):
-    nums = [-1, 0, 1, 2, -1, -4]
     nums1 = sorted(nums)
-    i = len(nums1) // 2
-    data = nums1[i]
-    return data
-aa = 1
-bb = 2
-
-print(aa)
+    res = []
+    for i in range(0, len(nums)-2):
+        if nums1[i] > 0: break
+        if i >0 and nums1[i] == nums1[i-1]: continue
+        j = i + 1 #左指针
+        k = len(nums) -1
+        while j < k:
+            s = nums1[i] + nums1[j] + nums1[k]
+            if s == 0:
+                res.append([nums1[i], nums1[j], nums1[k]])
+            elif  s > 0:
+                k -= 1
+                while j < k and nums1[k] == nums1[k+1]: k -= 1
+            else:
+                j += 1
+                while j < k and nums1[j] == nums1[j+1]: j += 1
+            j += 1
+            k -= 1
+    return res
+nums = [-1, 0, 1, 2, -1, -4]
+print(threeSum(nums))
