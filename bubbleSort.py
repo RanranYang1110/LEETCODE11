@@ -80,10 +80,14 @@ def mergeSort(nums):
     nums = insertSort(nums)
     return nums
 
+def heapSort(nums):
+    '''堆排序方法'''
+
 nums1 = [2,4,3,11,8,6,9,4,15,19]
 # nums1 = [4, 2]
-# print(bubbleSort(nums1))
-# print(selectionSort(nums1))
-# print(insertSort(nums1))
+print(bubbleSort(nums1))
+print(insertSort(nums1))
 print(shellSort(nums1))
 print(mergeSort(nums1))
+print(quicksort(nums1))
+print(selectionSort(nums1))
