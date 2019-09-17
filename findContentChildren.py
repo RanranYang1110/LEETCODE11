@@ -17,3 +17,6 @@ def findContentChildren(g, s):
     return res
 
 g = [1,2,3]
+s = [1,1]
+res = findContentChildren(g, s)
+print(res)
