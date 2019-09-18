@@ -9,11 +9,11 @@ def findRestaurant(list1, list2):
     res = []
     data_in = {i: map1[i] + map2[i] for i in inter}
     res = []
-    # for i in inter:
-    #     if data_in[i] == min(data_in.values()):
-    #         res.append(i)
-    # return res
-    return [val for val in inter if data_in[val] == min(data_in.values())]
+    for i in inter:
+        if data_in[i] == min(data_in.values()):
+            res.append(i)
+    return res
+    # return [val for val in inter if data_in[val] == min(data_in.values())]
 list1 = ["Shogun", "Tapioca Express", "Burger King", "KFC"]
 list2 = ["Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"]
 print(findRestaurant(list1, list2))
