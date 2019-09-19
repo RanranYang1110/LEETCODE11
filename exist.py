@@ -11,8 +11,8 @@ class Solution:
         pos = [[False for _ in range(len(board[0]))] for _ in range(len(board))]
         M, N = len(board), len(board[0])
 
-        for i in range(len(M)):
-            for j in range(len(N)):
+        for i in range(M):
+            for j in range(N):
                 #对每个格子都从头到尾搜索
                 if self.search_word(board, word, 0, i, j, pos, M, N):
                     return True
@@ -34,5 +34,8 @@ class Solution:
 
 
 board = [['A','B','C','E'], ['S','F','C','S'],['A','D','E','E']]
-# word = 'ABCCED'
+word = 'ABCCED'
+clf = Solution()
+print(clf.exist(board, word))
+
 
