@@ -30,3 +30,16 @@ def subsets(nums):
 # print(subsets_recursive(nums))
 nums = [1,2,3]
 print(subsets(nums))
+
+def subsets_test(nums):
+    res = []
+    n = len(nums)
+    def helper(i, tmp):
+        res.append(nums[i])
+        for j in range(i, n):
+            helper(j + 1, tmp + nums[j])
+    helper(0, [])
+    return res
+nums = [1,2,3]
+print(subsets_test(nums))
+
