@@ -21,3 +21,6 @@ def decodeString(s):
 
 s = "3[a]2[bc]"
 print(decodeString(s))
+
+s = "3[a2[c]]"
+print(decodeString(s))
