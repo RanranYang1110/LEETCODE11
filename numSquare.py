@@ -1,0 +1,50 @@
+#-*- coding:utf-8 -*-
+# @author: qianli
+# @file: numSquare.py
+# @time: 2019/09/20
+# def numSquare(n):
+#     if n == 1:
+#         return 1
+#     else:
+#         mm = 0
+#         while n > 1:
+#             t = n
+#             while t ** 2 > n:
+#                 t -= 1
+#             mm += 1
+#             n -= t ** 2
+#     if n == 1:
+#         return mm+1
+#     return mm
+class node:
+    def __init__(self, value, step=0):
+        self.value = value
+        self.step = step
+    def __str__(self):
+        return '<value:{}, step:{}>'.format(self.value, self.step)
+
+class Solution:
+    def numSquares(self, n: int) -> int:
+        queue = [node(n)]
+        visited = set([node(n).value])
+        while queue:
+            vertex = queue.pop(0)
+            residuals = [vertex.value - n*n for n in range(1, int(vertex.value **.5)+1)]
+            for i in residuals:
+                new_vertex = node(i, vertex.step + 1)
+                if i == 0:
+                    return new_vertex.step
+                elif i not in visited:
+                    queue.append(new_vertex)
+                    visited.add(i)
+        return -1
+
+
+# n = 10
+# res= numSquare(12)
+# print(res)
+# print(numSquare(n))
+n = 18
+clf = Solution()
+res = clf.numSquares(n)
+print(res)
