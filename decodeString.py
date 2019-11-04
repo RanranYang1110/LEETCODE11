@@ -3,6 +3,7 @@
 # @file: decodeString.py
 # @time: 2019/11/04
 def decodeString(s):
+    '''解码字符串'''
     stack = []
     stack.append(["", 1])
     num = ""
