@@ -12,6 +12,16 @@ def containsNearbyDuplicate(nums, k):
                     return True
         return False
     #%%
+
+def containsNearbyDuplicate1(nums, k):
+    dict = {}
+    for  i in range(len(nums)):
+        if nums[i] not in dict:
+            dict[nums[i]] = i
+        else:
+            if i - dict[nums[i]] <= k:
+                return True
+    return False
 nums = [1,2,3,1]
 k = 3
-print(containsNearbyDuplicate(nums, k))
+print(containsNearbyDuplicate1(nums, k))
