@@ -13,7 +13,7 @@ def firstUniqChar(s):
             res[s[i]] += 1
     for key, values in list(res.items()):
         if values == 1:
-            return mm[key]
+            return key
 s = 'mmcesd'
 print(firstUniqChar(s))
 ress = firstUniqChar(s)
