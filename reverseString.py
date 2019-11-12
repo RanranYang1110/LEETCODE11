@@ -7,5 +7,10 @@ def reverseString(s):
     s[0::] = s[::-1]
     return s
 
+def reverseString2(s):
+    '''反转字符串'''
+    for i in range(len(s)):
+        s.insert(i, s.pop())
+    return s
 s = ['a','b','v','d','f']
-print(reverseString(s))
+print(reverseString2(s))

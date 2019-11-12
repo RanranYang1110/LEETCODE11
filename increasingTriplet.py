@@ -14,6 +14,24 @@ def increasingTriplet(nums):
         else:
             count1 = 1
     return False
+
+def increasingTriplet(self, nums: [int]) -> bool:
+    if len(nums) < 3:
+        return False
+
+    win = [nums[0]]
+    for num in nums:
+        if num > win[-1]:
+            win.append(num)
+            if len(win) >= 3:
+                return True
+        else:
+            i = len(win) - 1
+            while i > 0 and win[i - 1] >= num:
+                i -= 1
+            win[i] = num
+    return False
+
 nums = [1,2,1,4,3]
 nums = [5, 1, 5, 5, 3, 5, 4]
 print(increasingTriplet(nums))
