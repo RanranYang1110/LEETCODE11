@@ -14,6 +14,15 @@ def moveZeros(nums):
             m += 1
     return nums
 
+def moveZeros2(nums):
+    m = 0
+    for i in range(len(nums)):
+        if nums[m] == 0:
+            nums.pop(m)
+            nums.append(0)
+        else:
+            m += 1
+    return nums
 # nums = [0,0,1]
-nums = [0, 1, 0, 3, 12]
-print(moveZeros(nums))
+nums = [ 0, 0, 1, 0, 3, 12, 7, 0, 3, 29, 9, 0, 1]
+print(moveZeros2(nums))

@@ -33,5 +33,17 @@ def searchMatrix2(matrix, target):
         if start < target: col += 1
         elif start > target: row -= 1
         else: return True
+
+def searchMatrix3(matrix, target):
+    if len(matrix) == 0:
+        return False
+    height, width = len(matrix), len(matrix[0])
+    row, col = height-1, 0
+    while row >= 0 and col < width:
+        if matrix[row][col] > target: row -= 1
+        elif matrix[row][col] < target: col += 1
+        else: return True
+    return False
+
 matrix = [[1,3,5,7],[10, 11, 16, 20],[23, 30, 34, 50]]
-print(searchMatrix2(matrix, 5))
+print(searchMatrix3(matrix, 5))

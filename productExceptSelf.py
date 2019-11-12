@@ -17,7 +17,20 @@ def productExceptSelf(nums):
         inter *= nums[j]
     res[0] = inter
     return res
+
+def productExceptSelf2(nums):
+    res = [1] * len(nums)
+    for i in range(1, len(nums)):
+        res[i] = nums[i-1] * res[i-1]
+    inter = 1
+    for i in range(len(nums)-1, 0, -1):
+        res[i] = res[i] * inter
+        inter *= nums[i]
+    res[0] = inter
+    return res
+
 nums = [1,2,3,4]
-print(productExceptSelf(nums))
+nums = [4]
+print(productExceptSelf2(nums))
 
 
